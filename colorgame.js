@@ -1,4 +1,4 @@
-var numSquares = 6;
+var numSquares = 9;
 var colors = [];
 var pickedColor;
 var squares = document.querySelectorAll(".square");
@@ -23,8 +23,9 @@ function setupModeButtons(){
         modeButtons[i].addEventListener("click", function(){
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
+            modeButtons[2].classList.remove("selected");
             this.classList.add("selected");
-            this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
+            this.textContent === "Easy" ? numSquares = 3 : this.textContent === "Medium" ? numSquares = 6 : numSquares = 9;
             reset();
         });
     }
@@ -43,7 +44,7 @@ function setupSquares() {
             h1.style.backgroundColor = clickedColor;
             resetButton.textContent = "Play Again?"
         }   else {
-            this.style.backgroundColor = "#232323";
+            this.style.backgroundColor = "#656565";
             messageDisplay.textContent = "Try Again!";
             }
         });
